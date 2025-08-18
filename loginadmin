@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio de Sesion</title>
+  
+</head>
+<body>
+ 
+  <div class="contenedor">
+   <div class="header">
+  <img class="logo" src="C:\xampp\htdocs\mtc\paginasweb\media\Logo.png" alt="Logo" />
+  <h1 class="titulo">Inicio de Sesion</h1>
+</div>
+<h3>Acceso exclusivo para administradores. Si usted es administrador, por favor inicie sesión con su cuenta.</h3>
+    <h2>Correo electrónico</h2>
+    <input type="text" class="cuadrado" placeholder="Ingrese su correo electrónico"/>
+    
+    <h2>Teléfono</h2>
+    <input type="text" class="cuadrado" placeholder="Ingrese su número de teléfono"/>
+    
+    <h2>Contraseña</h2>
+    <input type="password" class="cuadrado" placeholder="Ingrese su contraseña"/>
+    
+    
+    <button class="btn">Iniciar Sesion</button>
+  </div>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to left, #38CCCA, #7D9BC4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .contenedor {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h3{
+     font-size: 19px;
+     color: red;
+     
+}
+
+    .cuadrado {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: black;
+    }
+
+    .cuadrado::placeholder {
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    .btn {
+      margin-top: 15px;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: #1dd2b4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+h1{
+      top: 20%;
+      font-size: 8mm;
+}
+    h2 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 5px;
+      font-size: 16px;
+      align-self: flex-start;
+    }
+  .header {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;    
+  margin-bottom: 20px;     
+}
+
+.logo {
+  width: 300px;  
+  height: auto;
+   
+}
+
+.titulo {
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+  margin: 0;  
+}
+  </style>
+</body>
+</html>
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = $_POST["correo"];
+    $telefono = $_POST["telefono"];
+    $password = $_POST["password"];
+
+  
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+
+
+    $conexion = new mysqli("localhost", "root", "", "mi_basedatos");
+    $sql = "INSERT INTO usuarios (correo, telefono, password) VALUES ('$correo', '$telefono', '$hash')";
+    $conexion->query($sql);
+
+    echo "Usuario registrado con contraseña encriptada.";
+}
+?>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = $_POST["correo"];
+    $password = $_POST["password"];
+
+    $conexion = new mysqli("localhost", "root", "", "mi_basedatos");
+    $sql = "SELECT password FROM usuarios WHERE correo='$correo'";
+    $resultado = $conexion->query($sql);
+
+    if ($resultado->num_rows > 0) {
+        $fila = $resultado->fetch_assoc();
+        $hash = $fila["password"];
+
+        // Verificar contraseña
+        if (password_verify($password, $hash)) {
+            echo "Inicio de sesión correcto ✅";
+        } else {
+            echo "Contraseña incorrecta ❌";
+        }
+    } else {
+        echo "Usuario no encontrado";
+    }
+}
+?>
+<?php
+include  'C:\xampp\htdocs\mtc\paginasweb\conexion.php';
+?>
