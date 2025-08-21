@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alertas Globales</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSS interno -->
+  <style>
+    /* === CONFIGURACIÓN GENERAL === */
+    html { box-sizing: border-box; font-size: 16px; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to left, #7D9BC4, #38CCCA);
+    }
+
+    /* === ENCABEZADO === */
+    .header {
+      background: linear-gradient(to bottom, #537eba, #22b8b6);
+      padding: 1.25rem;
+      border-bottom-left-radius: 2.5rem;
+      border-bottom-right-radius: 2.5rem;
+      color: white;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+    }
+
+    .header-title { 
+        font-size: 1.25rem; 
+        margin: 0; 
+    }
+    .header-logo { 
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: center; 
+        gap: 1rem;
+         
+    }
+    .header-logo img { 
+        width: 21.875rem; 
+        height: auto; 
+    }
+
+    /* === BUSCADOR === */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-icon-button {
+      background: none;
+      border: none;
+      color: #29436B;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .search-input-container {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 3rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .search-input-container i { color: #29436B; }
+
+    .search-input {
+      border: none;
+      outline: none;
+      width: 100%;
+      background: none;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+    }
+
+    .search-input::placeholder { color: #aaa; }
+
+    /* === PERFIL DE USUARIO === */
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 2rem 3rem 1rem 5rem;
+    }
+
+    .user-avatar {
+      width: 6.25rem;
+      height: 6.25rem;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      margin-right: 2rem;
+    }
+
+    .user-info p { margin: 4px 0; text-align: left; }
+
+    /* === TARJETA DE REPORTE === */
+    .report-card {
+      transition: all 0.3s ease;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      background: rgba(241, 253, 255, 0.32);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto 1rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .report-card:hover {
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-location {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      color: #333;
+      gap: 15px;
+    }
+
+    .report-location i { margin-right: 5px; color: #38CCCA; }
+
+    .report-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .report-details { flex: 1 1 60%; }
+    .report-details p { margin-bottom: 8px; color: #444; }
+
+    .report-image { width: 30%; height: auto; }
+    .report-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #dddddd9c;
+    }
+
+    .report-status-inprogress {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: orange;
+      border-radius: 2px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === ENCABEZADO === -->
+  <header class="header">
+    <!-- Logo -->
+    <div class="header-logo">
+      <img src="C:\xampp\htdocs\mtc\assets\media\MTC.png" alt="Logo intendencia">
+    </div>
+
+    <!-- Perfil de usuario -->
+    <div class="user-profile">
+      <label for="upload-photo">
+        <img src="C:\xampp\htdocs\mtc\assets\media\user.png" alt="Foto de perfil" id="preview-photo" class="user-avatar">
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" style="display: none">
+
+      <div class="user-info">
+        <p>Usuario:</p>
+        <p>Edad:</p>
+        <p>Correo electrónico:</p>
+        <p>Teléfono:</p>
+      </div>
+    </div>
+
+    <!-- Buscador -->
+    <div class="search-bar">
+      <a href="index.html">
+        <button class="search-icon-button back-button">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+      </a>
+
+      <div class="search-input-container">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-input" placeholder="Buscar alerta...">
+        <i class="fas fa-microphone"></i>
+      </div>
+
+      <button class="search-icon-button"><i class="fas fa-filter"></i></button>
+      <button class="search-icon-button"><i class="fas fa-sync-alt"></i></button>
+    </div>
+
+    <h1 class="header-title">Alertas Recibidas</h1>
+  </header>
+
+  <!-- === TARJETAS DE ALERTA === -->
+  <div class="report-card">
+    <div class="report-location">
+      <span><i class="fas fa-map-marker-alt"></i> Calle Artigas, entre Giménez y Carreaga</span>
+      <span><i class="fas fa-map-marker-alt"></i> Número 1</span>
+    </div>
+
+    <div class="report-main">
+      <div class="report-details">
+        <p><strong>Fecha y hora:</strong> 24/05/25 · 17:10 p.m.</p>
+        <p><strong>Descripción:</strong> Hay un bache en la calle frente al apartamento.</p>
+        <p><strong>Estado actual:</strong> 
+          <span class="report-status-inprogress"></span> En proceso
+        </p>
+      </div>
+
+      <div class="report-image">
+        <img src="C:\xampp\htdocs\mtc\uploads\calle1.jpeg" alt="Imagen del reporte">
+      </div>
+    </div>
+  </div>
+
+  <div class="report-card">
+    <div class="report-location">
+      <span><i class="fas fa-map-marker-alt"></i> Calle Artigas, entre Giménez y Carreaga</span>
+      <span><i class="fas fa-map-marker-alt"></i> Número 1</span>
+    </div>
+
+    <div class="report-main">
+      <div class="report-details">
+        <p><strong>Fecha y hora:</strong> 24/05/25 · 17:10 p.m.</p>
+        <p><strong>Descripción:</strong> Hay un bache en la calle frente al apartamento.</p>
+        <p><strong>Estado actual:</strong> 
+          <span class="report-status-inprogress"></span> En proceso
+        </p>
+      </div>
+
+      <div class="report-image">
+        <img src="C:\xampp\htdocs\mtc\uploads\calle2.jpeg" alt="Imagen del reporte">
+      </div>
+    </div>
+  </div>
+
+  <!-- JS principal -->
+  <script>
+    const inputPhoto = document.getElementById('upload-photo');
+    const previewPhoto = document.getElementById('preview-photo');
+
+    // Cargar imagen guardada si existe
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedImage = localStorage.getItem('userPhoto');
+      if (savedImage) previewPhoto.src = savedImage;
+    });
+
+    // Cambiar imagen y guardarla
+    inputPhoto.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          previewPhoto.src = e.target.result;
+          localStorage.setItem('userPhoto', e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+</body>
+</html>

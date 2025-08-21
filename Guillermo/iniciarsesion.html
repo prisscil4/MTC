@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio Sesion</title>
+</head>
+<body>
+  <div class="imagen-mockup">
+    <img src="D:\Proyecto 2025\Logo_de_la_empresa.png" >
+  </div>
+  <img src="D:\Proyecto 2025\Registro usuario\telefono.png">
+  <img src="D:\Proyecto 2025\Registro usuario\mensaje.png">
+  <img src="D:\Proyecto 2025\Registro usuario\oculto.png">
+<table >
+<tr> <td> <h2> Correo electrónico </h2> </table>
+<table>
+<tr> <td> <h2> Teléfono </h2> </table>
+<table >
+<tr> <td> <h2>  Contraseña </h2> </table>
+
+
+<style>
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+.contenedor {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 700px;
+      top: 300px;
+    }
+.cuadrado {
+      width: 640px;
+      height: 110px;
+      margin: 15px 0;
+      padding: 15px;
+      box-sizing: border-box;
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 8px;
+      font-size: 20px;
+      outline: none;
+      background-color: #1b7dba;
+      color: white;
+    }
+.cuadrado::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+.cuadrado:hover {
+      transform: none;  
+      border-color: rgb(255, 255, 255);  
+      box-shadow: none;  
+    }
+.boton-registro {
+      width: 400px;
+      height: 110px;
+      margin: 15px 0;
+      padding: 15px;
+      box-sizing: border-box;
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 8px;
+      font-size: 20px;
+      outline: none;
+      background-color: #38ccca;
+      color: white;  
+      text-align: center;
+      line-height: 80px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 760px;  
+      left: 800px;
+    }
+.boton-registro:hover {
+      transform: scale(1.1);  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+.imagen-mockup {
+      position: absolute;
+      left: 900px;
+      top: 50px;
+    }
+.tabla-imagenes {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+img{
+  width: 70; 
+  position:absolute; 
+  top:480px; 
+  left:1220px;
+}
+table td {
+  padding: 10px;
+}
+table{
+  border:0; 
+  width:50%;
+  position: absolute; 
+  left: 750px; 
+  top:245px
+}
+
+  </style>
+</head>
+
+
+<body background="fondo.png">
+
+
+  <div class="contenedor">
+    <input type="text" class="cuadrado" placeholder="Ingrese su correo electrónico" />
+    <input type="text" class="cuadrado" placeholder="Ingrese su número de teléfono" />
+    <input type="text" class="cuadrado" placeholder="Ingrese su contraseña" />
+
+
+  </div>
+
+
+
+  <div class="boton-registro">
+    Registrarse
+  </div>
+
+
+  <style>
+ img {
+      position: relative;
+      top: -80px;
+      left: -120px;
+    }
+  </style>
+</body>
+</html>
