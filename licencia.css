@@ -1,0 +1,8 @@
+ footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.167);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: 2rem;
+  }

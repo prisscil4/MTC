@@ -1,0 +1,45 @@
+[10-Nov-2025 02:52:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Administrador' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/Inicio Sesion.php:50
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/Inicio Sesion.php(50): mysqli->query()
+#1 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/Inicio Sesion.php on line 50
+[10-Nov-2025 02:52:33 UTC] FATAL: Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Administrador' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/Inicio Sesion.php:50
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/Inicio Sesion.php(50): mysqli->query()
+#1 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/Inicio Sesion.php on line 50
+[10-Nov-2025 11:45:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Usuario' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php:16
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php(16): mysqli_query()
+#1 /home/u302434035/domains/mtcplanvereda.site/public_html/index.php(30): include('/home/u30243403...')
+#2 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php on line 16
+[10-Nov-2025 11:45:16 UTC] FATAL: Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Usuario' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php:16
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php(16): mysqli_query()
+#1 /home/u302434035/domains/mtcplanvereda.site/public_html/index.php(30): include('/home/u30243403...')
+#2 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php on line 16
+[10-Nov-2025 11:47:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Usuario' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php:16
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php(16): mysqli_query()
+#1 /home/u302434035/domains/mtcplanvereda.site/public_html/index.php(30): include('/home/u30243403...')
+#2 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php on line 16
+[10-Nov-2025 11:47:38 UTC] FATAL: Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Usuario' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php:16
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php(16): mysqli_query()
+#1 /home/u302434035/domains/mtcplanvereda.site/public_html/index.php(30): include('/home/u30243403...')
+#2 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php on line 16
+[10-Nov-2025 11:59:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Ubicacion' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/alerta_globales.php:91
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/alerta_globales.php(91): mysqli_query()
+#1 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/alerta_globales.php on line 91
+[10-Nov-2025 11:59:21 UTC] FATAL: Uncaught mysqli_sql_exception: Table 'u302434035_MTC2.Ubicacion' doesn't exist in /home/u302434035/domains/mtcplanvereda.site/public_html/alerta_globales.php:91
+Stack trace:
+#0 /home/u302434035/domains/mtcplanvereda.site/public_html/alerta_globales.php(91): mysqli_query()
+#1 {main}
+  thrown in /home/u302434035/domains/mtcplanvereda.site/public_html/alerta_globales.php on line 91
+[14-Nov-2025 14:34:43 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u302434035/domains/mtcplanvereda.site/public_html/verificacionuser.php on line 3

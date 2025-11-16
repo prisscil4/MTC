@@ -1,11 +1,52 @@
+
 <?php
-session_start();
 include('conexion.php');
+include('verificacionuser.php');
 
+// Evitar warning si no existe user_id
+$userId = $_SESSION['user_id'] ?? null;
 
+$profilePic = "assets/media/perfil.png"; // foto por defecto
 
-// Si no tiene foto de perfil, usamos una por defecto:
-$profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc>assets/media/perfil.png";
+// Sólo consultamos la DB si hay un usuario logueado
+if ($userId) {
+    // 1) Intentar foto del administrador
+    if ($stmt = $conn->prepare("SELECT FotoPerfil FROM administrador WHERE CI = ?")) {
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        if (!empty($row['FotoPerfil'])) {
+            $candidate = $row['FotoPerfil'];
+            // Comprobar existencia del archivo usando ruta absoluta relativa al script
+            if (file_exists(__DIR__ . '/' . $candidate)) {
+                $profilePic = $candidate;
+            }
+        }
+        $stmt->close();
+    }
+  }
+
+// 1️⃣ Intentar foto del administrador
+$stmt = $conn->prepare("SELECT FotoPerfil FROM administrador WHERE CI = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$res = $stmt->get_result();
+$row = $res->fetch_assoc();
+
+if (!empty($row['FotoPerfil']) && file_exists($row['FotoPerfil'])) {
+    $profilePic = $row['FotoPerfil'];
+} else {
+    // 2️⃣ Intentar foto del usuario normal
+    $stmt = $conn->prepare("SELECT FotoPerfil FROM usuario WHERE id_usuario = ?");
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $row = $res->fetch_assoc();
+    if (!empty($row['FotoPerfil']) && file_exists($row['FotoPerfil'])) {
+        $profilePic = $row['FotoPerfil'];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,22 +56,21 @@ $profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Inicio</title>
   <link rel="icon" href="assets/media/Isotipo.png" />
+  <link rel="stylesheet" href="licencia.css">
 </head>
 <body>
 <div class="container">
-  <header>
+  <header class="d-flex justify-content-between align-items-center p-3">
     <div class="header">
       <div class="logo">
-        <img src="assets/media/MTC.png" alt="Logo">
+        <img class="img-fluid" src="assets/media/MTC.png" alt="Logo">
       </div>
 
       <div class="auth-buttons">
         <?php if (isset($_SESSION['user_id'])): ?>
           <!-- Usuario logueado -->
           <a href="confuser.php">
-            <img src="<?= htmlspecialchars($profilePic) ?>" 
-                 alt="Perfil" 
-                 style="width:50px; height:50px; border-radius:50%; cursor:pointer;">
+            <img src="<?= htmlspecialchars($profilePic) ?>" alt="Perfil" style="width:50px; height:50px; border-radius:50%; cursor:pointer;">
           </a>
         <?php else: ?>
           <!-- Usuario NO logueado -->
@@ -72,13 +112,13 @@ $profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc
 
     <section class="icon">
       <img src="assets/media/Unirse.png" alt="Unirse al Plan Vereda">
-      <a href="inscripcionvoluntarios.html">
+      <a href="inscripcionvoluntarios.php">
       <button style="background:#3E7DD1;"><h4>Unirse al Plan Vereda</h4></button></a>
     </section>
 
     <section class="icon">
       <img src="assets/media/Solicitar.png" alt="Solicitar arreglo">
-      <a href="inscripcionvoluntarios.html">
+      <a href="propetario.php">
       <button style="background:#5797ED;"><h4>Solicitar un Arreglo</h4></button></a>
     </section>
   </main>
@@ -186,7 +226,7 @@ $profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc
   }
 
   h1 {
-    color: white;
+    color: "#25314aff";
     font-size: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
@@ -199,7 +239,7 @@ $profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc
     margin-left: 4.5rem;
   }
   h3{
-    color: white;
+    color: #1c263aff;
     font-size: 1.2rem;
     margin: 0.5rem 0;
     padding: 0 1rem;
@@ -242,14 +282,7 @@ $profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc
     border-radius: 50px;
     cursor: pointer;
   }
-  footer {
-    margin-top: 1.5rem;
-    text-align: center;
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.167);
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    padding: 2rem;
-  }
+ 
 
   /* MEDIA QUERIES */
   @media (max-width: 767px) {
@@ -317,5 +350,6 @@ $profilePic = isset($_SESSION['profile_pic']) ? $_SESSION['profile_pic'] : "<mtc
     });
   }
 </script>
+<script src="//code.tidio.co/y5s1lglo277ylbafphccz4xvyu57j53j.js" async></script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+<?php
+include  'conexion.php';
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Cambiar contraseña</title>
+        <link rel="stylesheet" href="formularios.css">
+        <link rel="icon" href="Isotipo.png" />
+   
+</head>
+<body>
+<div class="form-container">
+  <header class="logo-container">
+    <img src="Logo.png" width="290" height="130" alt="Logo">
+    <h1>Cambiar contraseña</h1>
+  </header>
+
+  <main>
+    <section>
+      <form id="formulario"> 
+        <div class="input-wrapper">
+          <label for="pass1" class="titulo-from">Contraseña nueva:</label>
+          <div class="position-relative">
+            <input 
+              type="password" 
+              id="pass1" 
+              placeholder="Ingrese su nueva contraseña"
+              maxlength="32" 
+              pattern="[A-Za-z0-9]{6,32}" 
+              required
+              title="Mínimo 6 caracteres. Sin puntos ni guiones (- o .)">
+            <button type="button" onclick="togglePass('pass1', this)">
+              <img src="img/ocultar.png" alt="ver" width="20">
+            </button>
+          </div>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="pass2" class="titulo-from">Confirmar contraseña:</label>
+          <div class="position-relative">
+            <input 
+              type="password" 
+              id="pass2" 
+              placeholder="Confirme su nueva contraseña"
+              maxlength="32" 
+              pattern="[A-Za-z0-9]{6,32}" 
+              required
+              title="Mínimo 6 caracteres. Sin puntos ni guiones (- o .)">
+            <button type="button" onclick="togglePass('pass2', this)">
+              <img src="img/ocultar.png" alt="ver" width="20">
+            </button>
+          </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+</div>
+
+<script>
+function togglePass(id, btn) {
+  const input = document.getElementById(id);
+  const img = btn.querySelector('img');
+
+  if (input.type === "password") {
+    input.type = "text";
+    img.src = "media/img/mostrar.png";
+  } else {
+    input.type = "password";
+    img.src = "media/img/ocultar.png";
+  }
+}
+
+document.getElementById('formulario').addEventListener('submit', function(e) {
+  const pass1 = document.getElementById('pass1');
+  const pass2 = document.getElementById('pass2');
+
+  if (pass1.value !== pass2.value) {
+    pass2.setCustomValidity("Las contraseñas no coinciden");
+    pass2.reportValidity();
+    e.preventDefault();
+  } else {
+    pass2.setCustomValidity("");
+  }
+});
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "mtcplanvereda",
+  "orientation": "any",
+  "scope": "mtcplanvereda.site",
+  "short_name": "mtcplanvereda",
+  "start_url": "mtcplanvereda.site",
+  "theme_color": "#6498d3",
+  "icons": [
+    {
+      "src": "https://mtcplanvereda.site/assets/media/Isotipo.png",
+      "type": "image/png",
+      "sizes": "252x200",
+      "isSquare": false,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 252,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "1",
+  "description": "Es una aplicación que está hecha con el fin de brindar facilidad y accesibilidad a la hora de reportar alertas sobre roturas de calles o veredas, sin la necesidad de ir al lugar físico y actuando en tiempo real.",
+  "lang": "es",
+  "categories": [
+    "personalization",
+    "productivity",
+    "security",
+    "utilities"
+  ]
+}

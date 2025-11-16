@@ -1,0 +1,173 @@
+/* Fondo general */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to left, #38CCCA, #7D9BC4);
+  display: flex;
+  justify-content: center;
+  min-height: 90vh;
+  margin: 0;
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  color: #1d2c40;
+  
+}
+
+/* Título de campos */
+.form-container h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #1c263a;
+  font-weight: 600;
+  text-align: center;
+}
+h3 h2 {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+  color: #1c263a;
+  font-weight: 600;
+  text-align: center;
+}
+/* Encabezado con logo */
+
+.header-flex img.logo-img {
+  height: 40px;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* Input wrapper con íconos */
+.input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(153, 228, 255, 0.9);
+  color: #131d28;
+  font-size: 15px;
+}
+
+/* Placeholder */
+::placeholder {
+  color: #233447af;
+}
+
+/* Íconos dentro de los inputs */
+.input-wrapper i,
+.input-wrapper span {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1c263a;
+  cursor: pointer;
+}
+
+/* Botón */
+.form-container button {
+  background: #0090c0;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+.form-container button:hover {
+  background: #305ce1;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* Logo centrado */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  width: 50%;
+}
+
+/* Flecha de regreso */
+.back-arrow {
+  width: 4rem;
+  font-size: 24px;
+  color: #002974;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Mensaje de error */
+text p {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.titulo-from {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1c263a;
+}
+/* Estilos para el select */
+    .input-wrapper select {
+      width: 100%;
+      padding: 12px 40px 12px 12px;
+      border-radius: 10px;
+      border: none;
+      background: #99E4FF;
+      color: #1a2531c7;
+    }
+
+    .tabla-alertas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-alertas th, .tabla-alertas td {
+  border: 1px solid #305ce1;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabla-alertas th {
+  background: #0090c0;
+  color: white;
+}
+
+.btn-accion {
+  display: inline-block;
+  background: #0090c0;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 2px;
+  font-size: 0.9rem;
+}
+
+.btn-accion:hover {
+  background: #305ce1;
+}

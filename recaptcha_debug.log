@@ -1,0 +1,63 @@
+2025-11-14T01:57:43+00:00 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-14T01:56:55Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-14T11:52:19+00:00 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-14T11:50:40Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-14T14:37:05+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-14T14:35:58Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-14T14:37:22+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-14T14:37:05Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-14T14:46:49+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-14T14:46:04Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-15T14:42:23+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-15T14:40:59Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-15T14:44:52+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-15T14:42:23Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-16T11:15:14+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-16T11:14:51Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
+2025-11-16T11:16:34+00:00 | http: 200 | resp: {
+  "success": true,
+  "challenge_ts": "2025-11-16T11:15:15Z",
+  "hostname": "mtcplanvereda.site",
+  "score": 0.9,
+  "action": "register"
+}
