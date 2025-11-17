@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-07-01" view-index="0" gantt-divider-location="777" resource-divider-location="300" version="3.3.3316" locale="es_ES">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-08-04" view-index="0" gantt-divider-location="762" resource-divider-location="300" version="3.3.3316" locale="es_ES">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nombre" width="190" order="0"/>
-        <field id="tpd4" name="Fecha de inicio" width="125" order="1"/>
-        <field id="tpd5" name="Fecha de fin" width="147" order="2"/>
-        <field id="tpd6" name="Duración" width="59" order="3"/>
-        <field id="tpd8" name="Coordinador" width="240" order="4"/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Nombre" width="186" order="0"/>
+        <field id="tpd4" name="Fecha de inicio" width="123" order="1"/>
+        <field id="tpd5" name="Fecha de fin" width="144" order="2"/>
+        <field id="tpd6" name="Duración" width="58" order="3"/>
+        <field id="tpd8" name="Coordinador" width="235" order="4"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
@@ -45,6 +45,7 @@
         </taskproperties>
         <task id="0" uid="db6f93b8d7e74ac1bbff60ba844f68c6" name="Carátula" color="#000000" meeting="false" start="2025-05-19" duration="3" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
             <depend id="21" type="2" difference="0" hardness="Strong"/>
+            <depend id="96" type="2" difference="0" hardness="Strong"/>
             <task id="3" uid="0a63fd5ac38c467ca3576c71a51e7065" name="Nombre del proyecto" color="#8cb6ce" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
                 <depend id="4" type="2" difference="0" hardness="Strong"/>
             </task>
@@ -81,24 +82,42 @@
         <task id="84" uid="5331af21140841bf92d2a3a5832beca9" name="Propósito" meeting="false" start="2025-05-20" duration="1" complete="0" expand="true"/>
         <task id="23" uid="633dd3dc17854b259dd6222ddc56ee3e" name="Reglas del equipo" color="#8cb6ce" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true"/>
         <task id="24" uid="829e0a6865cb4b269009650377dbe504" name="Actas de reuniones" color="#8cb6ce" meeting="false" start="2025-05-19" duration="50" complete="0" thirdDate="2025-05-19" thirdDate-constraint="0" priority="2" expand="true"/>
-        <task id="54" uid="43a69953965a4eccaffaf81bde215a79" name="Frontend" meeting="false" start="2025-05-19" duration="2" complete="0" expand="true">
-            <task id="25" uid="d06ad31f9be544f48b4ac4b029a09226" name="Mockups" color="#003333" meeting="false" start="2025-05-19" duration="2" complete="0" expand="true">
+        <task id="54" uid="43a69953965a4eccaffaf81bde215a79" name="Frontend" meeting="false" start="2025-05-19" duration="103" complete="0" expand="true">
+            <task id="25" uid="d06ad31f9be544f48b4ac4b029a09226" name="Mockups" color="#003333" meeting="false" start="2025-05-19" duration="103" complete="0" expand="true">
                 <depend id="83" type="2" difference="0" hardness="Strong"/>
-                <task id="27" uid="6e0ef198b9be4577af20817ced8b0460" name="Inicio web" color="#00cccc" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true">
+                <task id="27" uid="6e0ef198b9be4577af20817ced8b0460" name="Inicio web (index)" color="#00cccc" meeting="false" start="2025-05-19" duration="66" complete="0" expand="true">
+                    <depend id="28" type="2" difference="0" hardness="Strong"/>
+                    <depend id="29" type="2" difference="0" hardness="Strong"/>
                     <depend id="30" type="2" difference="0" hardness="Strong"/>
                     <depend id="35" type="2" difference="0" hardness="Strong"/>
                     <depend id="36" type="2" difference="0" hardness="Strong"/>
                     <depend id="85" type="2" difference="0" hardness="Strong"/>
+                    <depend id="88" type="2" difference="0" hardness="Strong"/>
+                    <depend id="89" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="30" uid="358dbd66cdaa47d89cc0b9f5bb3236f0" name="Denunciar alerta" color="#00cccc" meeting="false" start="2025-05-20" duration="1" complete="0" expand="true"/>
-                <task id="35" uid="3940b1bab362459bb90df15d092ef1e9" name="Ver Alertas" color="#00cccc" meeting="false" start="2025-05-20" duration="1" complete="0" expand="true"/>
-                <task id="36" uid="a80a4a703b454a9886201ba69d1f2e27" name="Solicitar arreglo" color="#00cccc" meeting="false" start="2025-05-20" duration="1" complete="0" expand="true"/>
-                <task id="85" uid="2cb025bdc35b45aab63652407fe79e5c" name="Unirse a Plan Vereda" meeting="false" start="2025-05-20" duration="1" complete="0" expand="true"/>
-                <task id="28" uid="b6289548758c4f2ab350bab442eaa8d7" name="Inicio de sesión" color="#00cccc" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true">
-                    <depend id="29" type="2" difference="0" hardness="Strong"/>
+                <task id="88" uid="95f558995cb649c4b5921007e7263c52" name="Ver alertas (voluntarios)" meeting="false" start="2025-08-19" duration="1" complete="0" expand="true"/>
+                <task id="89" uid="3bb8cfa0682e40d1956e9ae2b3b26864" name="Perfil de voluntario" meeting="false" start="2025-08-19" duration="29" complete="0" expand="true"/>
+                <task id="97" uid="8568097538d1446e97d60e6eddc38994" name="Perfil de usuario" meeting="false" start="2025-08-20" duration="10" complete="0" expand="true"/>
+                <task id="96" uid="b6a6a76dec7d4ce7a90a6503619b75b9" name="Cambiar contraseña" meeting="false" start="2025-05-22" duration="92" complete="0" expand="true"/>
+                <task id="92" uid="c9797cd704784309a4f45382503c4f8c" name="Selección de métodos de rec. de contraseña" meeting="false" start="2025-08-05" duration="30" complete="0" expand="true">
+                    <depend id="90" type="2" difference="0" hardness="Strong"/>
+                    <depend id="91" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="29" uid="b3d89b7059004056be7061cac9b627f4" name="Registro de usuario" color="#00cccc" meeting="false" start="2025-05-20" duration="1" complete="0" expand="true"/>
-                <task id="34" uid="8c48236f6348427391ea3d3016765df7" name="Panel del Administrador" color="#00cccc" meeting="false" start="2025-05-19" duration="1" complete="0" thirdDate="2025-05-19" thirdDate-constraint="0" expand="true"/>
+                <task id="90" uid="e52a6464cda040ce890496f288a26b16" name="Método de rec. de contra teléfono" meeting="false" start="2025-09-16" duration="9" complete="0" expand="true">
+                    <depend id="93" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="91" uid="7263ba5eeab644b993a57f9cb2d9f647" name="Método de rec. de contra de correo" meeting="false" start="2025-09-16" duration="9" complete="0" expand="true">
+                    <depend id="94" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="93" uid="70c0376397c74744a1ddd13ebc6d1100" name="Código enviado al teléfono" meeting="false" start="2025-09-29" duration="8" complete="0" expand="true"/>
+                <task id="94" uid="120bd7e3d4c34c1dad6ee4fe62628117" name="Código enviado al correo" meeting="false" start="2025-09-29" duration="1" complete="0" expand="true"/>
+                <task id="30" uid="358dbd66cdaa47d89cc0b9f5bb3236f0" name="Denunciar alerta" color="#00cccc" meeting="false" start="2025-08-19" duration="29" complete="0" expand="true"/>
+                <task id="35" uid="3940b1bab362459bb90df15d092ef1e9" name="Ver Alertas" color="#00cccc" meeting="false" start="2025-08-19" duration="25" complete="0" expand="true"/>
+                <task id="36" uid="a80a4a703b454a9886201ba69d1f2e27" name="Solicitar arreglo" color="#00cccc" meeting="false" start="2025-08-19" duration="20" complete="0" expand="true"/>
+                <task id="85" uid="2cb025bdc35b45aab63652407fe79e5c" name="Unirse a Plan Vereda" meeting="false" start="2025-08-19" duration="21" complete="0" expand="true"/>
+                <task id="28" uid="b6289548758c4f2ab350bab442eaa8d7" name="Inicio de sesión" color="#00cccc" meeting="false" start="2025-08-19" duration="19" complete="0" expand="true"/>
+                <task id="29" uid="b3d89b7059004056be7061cac9b627f4" name="Registro de usuario" color="#00cccc" meeting="false" start="2025-08-19" duration="10" complete="0" expand="true"/>
+                <task id="34" uid="8c48236f6348427391ea3d3016765df7" name="Panel del Administrador" color="#00cccc" meeting="false" start="2025-07-16" duration="30" complete="0" thirdDate="2025-05-19" thirdDate-constraint="0" expand="true"/>
             </task>
             <task id="58" uid="86d4ec3f5cb84e99a458041f892df73e" name="HTML" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true"/>
             <task id="59" uid="ee7aff1b909946b79d354406810177f8" name="CSS" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true"/>
@@ -125,7 +144,9 @@
             <depend id="57" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="57" uid="f6af3ede5b634180b5193af002af63e9" name="Gantt" color="#8cb6ce" meeting="false" start="2025-07-04" duration="1" complete="0" thirdDate="2025-05-19" thirdDate-constraint="0" expand="true"/>
-        <task id="83" uid="2099b04786094219a5bdad27f9d1b086" name="Paleta de colores" meeting="false" start="2025-05-21" duration="1" complete="0" expand="true"/>
+        <task id="83" uid="2099b04786094219a5bdad27f9d1b086" name="Paleta de colores" meeting="false" start="2025-10-09" duration="1" complete="0" expand="true"/>
+        <task id="86" uid="6de67879a0954a5080dfb47c6c7481c0" name="Diagrama de caso de uso" meeting="false" start="2025-07-10" duration="1" complete="0" expand="true"/>
+        <task id="87" uid="f622f0d5e2274b1cb0be6261506d4696" name="Diagrama de clases" meeting="false" start="2025-07-11" duration="1" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Priscila Jamen" function="Default:1" contacts="jamenpris@gmail.com" phone="099511319"/>
@@ -143,6 +164,10 @@
         <allocation task-id="42" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="49" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="21" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="83" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="96" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="27" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="10" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
         <allocation task-id="11" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
@@ -151,17 +176,35 @@
         <allocation task-id="45" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="49" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="21" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="86" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="87" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="94" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="93" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="91" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="90" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="89" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="47" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="48" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="50" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="55" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="49" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="21" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="34" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="35" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="88" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="27" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="97" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="46" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="50" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="55" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="49" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="21" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="85" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="36" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="92" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
